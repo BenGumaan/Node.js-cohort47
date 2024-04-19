@@ -10,10 +10,10 @@ Before we start coding we need to define what operations will be supported via o
 
 | Operation | Description                                             | Method | Route |
 | --------- | ------------------------------------------------------- | ------ | ----- |
-| Create    | Given a title and content create a new post             |        |       |
-| Read one  | Given a title, return the content of a single blog post |        |       |
-| Update    | Given a title and content update an existing blog post  |        |       |
-| Delete    | Given a title delete an existing blog post              |        |       |
+| Create    | Given a title and content create a new post             | POST   |       |
+| Read one  | Given a title, return the content of a single blog post | GET    |       |
+| Update    | Given a title and content update an existing blog post  | PUT    |       |
+| Delete    | Given a title delete an existing blog post              | Delete |       |
 
 What do you think should be filled in the `Method` and `Route` columns? Think about it and see if you can guess what it should be...
 
