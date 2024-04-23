@@ -9,8 +9,37 @@
  * - make sure to use the correct headers and http method in the request
  */
 
-function makeReservation() {
-  // YOUR CODE GOES IN HERE
+'use strict'
+
+import fetch from "node-fetch";
+
+async function makeReservation() {
+
+  try {
+    
+    const response = await fetch('https://reservation100-sandbox.mxapps.io/rest-doc/api');
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch data.');
+    }
+
+    const parsedData = await response.json();
+
+    return parsedData;
+
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    throw error;
+  }
+
 }
 
-makeReservation();
+(async () => {
+
+  try {
+    const data = await makeReservation();
+    console.log(data);
+  } catch (error) {
+    console.error('An error occurred:', error.message);
+  }
+})();
