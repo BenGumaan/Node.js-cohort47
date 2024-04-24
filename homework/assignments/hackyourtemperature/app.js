@@ -1,7 +1,8 @@
 'use strict'
 
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
-import keys from './sources/keys.js';
 
 const app = express();
 app.use(express.json());
@@ -12,7 +13,7 @@ app.post('/', async (req, res) => {
 
 	try {
 
-		const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${keys.API_KEY}`);
+		const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API_KEY}`);
           
 		if (!response.ok) {
 			if (response.status === 401) {
